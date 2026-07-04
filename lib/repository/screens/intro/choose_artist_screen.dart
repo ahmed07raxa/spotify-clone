@@ -90,7 +90,7 @@ class _ChooseArtistScreenState extends State<ChooseArtistScreen> {
                         crossAxisCount: 3,
                         mainAxisSpacing: 11,
                         crossAxisSpacing: 11,
-                        childAspectRatio: 9 / 11,
+                        childAspectRatio: 0.75,
                       ),
                       itemCount: mArist.length,
                       itemBuilder: (_, index) {

@@ -194,9 +194,10 @@ class _ChoosePodcastScreenState extends State<ChoosePodcastScreen> {
                           child: MyCustomRoundedBtn(
                             mWidth: 100,
                             onTap: () {
-                              Navigator.pushNamed(
+                              Navigator.pushNamedAndRemoveUntil(
                                 context,
                                 AppRoutes.dashboardScreen,
+                                (route) => false,
                               );
                             },
                             text: "Done",
