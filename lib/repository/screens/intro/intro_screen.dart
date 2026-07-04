@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
+import 'package:spotify_clone/domain/app_routes.dart';
 import 'package:spotify_clone/domain/ui_helper.dart';
 import 'package:spotify_clone/repository/widgets/my_custom_rounded_btn.dart';
 
@@ -32,13 +33,13 @@ class _IntroScreenState extends State<IntroScreen> {
               ),
             ),
           ),
-          bottomLoginUi(),
+          bottomLoginUi(context),
         ],
       ),
     );
   }
 
-  Widget bottomLoginUi() => Container(
+  Widget bottomLoginUi(BuildContext context) => Container(
     width: double.infinity,
     padding: EdgeInsets.only(bottom: 70),
     child: Column(
@@ -59,7 +60,9 @@ class _IntroScreenState extends State<IntroScreen> {
         mSpacer(),
         MyCustomRoundedBtn(
           text: "Sign up free",
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.createAccountScreen);
+          },
           mWidth: 300,
           textColor: Colors.black,
         ),

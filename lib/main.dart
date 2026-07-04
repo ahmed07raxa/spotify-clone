@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        fontFamily: "avenir"
+        fontFamily: "avenir",
       ),
-      initialRoute: AppRoutes.introScreen,
+      initialRoute: AppRoutes.splashScreen,
       routes: AppRoutes.getRoutes(),
     );
   }
