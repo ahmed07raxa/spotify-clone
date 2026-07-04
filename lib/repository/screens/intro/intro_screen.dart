@@ -65,6 +65,7 @@ class _IntroScreenState extends State<IntroScreen> {
           },
           mWidth: 300,
           textColor: Colors.black,
+          bgColor: AppColors.primaryColor,
         ),
         mSpacer(),
         MyCustomRoundedBtn(

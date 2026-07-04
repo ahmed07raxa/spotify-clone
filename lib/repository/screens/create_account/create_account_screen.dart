@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify_clone/domain/app_routes.dart';
 
 import '../../../domain/app_colors.dart';
 import '../../../domain/ui_helper.dart';
@@ -65,17 +66,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             allPages[selectedIndex],
             mSpacer(mHeight: 16),
             Padding(
-              padding: EdgeInsets.only(bottom: selectedIndex > 3 ? 0 : 25),
+              padding: EdgeInsets.only(bottom: selectedIndex > 3 ? 0 : 43),
               child: MyCustomRoundedBtn(
                 text: selectedIndex < 3 ? "Next" : "Create an account",
-                mWidth: selectedIndex < 3 ? 100 : 150,
+                mWidth: selectedIndex < 3 ? 100 : 180,
                 bgColor: AppColors.whiteColor,
                 onTap: () {
                   if (selectedIndex < 3) {
                     selectedIndex++;
                     setState(() {});
                   } else {
-                    // Navigator.pushNamed(context, AppRoutes.chooseArtistScreen);
+                    Navigator.pushNamed(context, AppRoutes.chooseArtistScreen);
                   }
                 },
               ),
@@ -86,64 +87,60 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
-  Widget stepOneUi() => Expanded(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        mSpacer(mHeight: 7),
-        Text(
-          'What’s your email?',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+  Widget stepOneUi() => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      mSpacer(mHeight: 7),
+      Text(
+        'What’s your email?',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
-        TextField(
-          cursorColor: Colors.white,
-          decoration: getCreateAccountTextField(),
+      ),
+      TextField(
+        cursorColor: Colors.white,
+        decoration: getCreateAccountTextField(),
+      ),
+      mSpacer(mHeight: 7),
+      Text(
+        " You’ll need to confirm this email later.",
+        style: TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
-        mSpacer(mHeight: 7),
-        Text(
-          " You’ll need to confirm this email later.",
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    ),
+        textAlign: TextAlign.center,
+      ),
+    ],
   );
-  Widget stepTwoUi() => Expanded(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Create a password',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+  Widget stepTwoUi() => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        'Create a password',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
-        TextField(
-          cursorColor: Colors.white,
-          decoration: getCreateAccountTextField(),
+      ),
+      TextField(
+        cursorColor: Colors.white,
+        decoration: getCreateAccountTextField(),
+      ),
+      mSpacer(mHeight: 7),
+      Text(
+        "Use at least 8 characters.",
+        style: TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
-        mSpacer(mHeight: 7),
-        Text(
-          "Use atleast 8 characters.",
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    ),
+        textAlign: TextAlign.center,
+      ),
+    ],
   );
   Widget stepThreeUi() => Expanded(
     child: Column(
