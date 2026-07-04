@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/repository/screens/home/home_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/domain/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,17 +16,22 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
-      );
+      Navigator.pushReplacementNamed(context, "/introScreen");
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [Center(child: Text("SPLASH SCREEN"))]),
+      backgroundColor: AppColors.blackColor,
+      body: Center(
+        child: SvgPicture.asset(
+          "assets/svg/Logo.svg",
+          height: 80,
+          width: 80,
+          color: AppColors.primaryColor,
+        ),
+      ),
     );
   }
 }
